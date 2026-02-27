@@ -20,7 +20,7 @@ if str(_src) not in sys.path:
 from bronze.bronze_ingestion import ingest_raw
 from silver.silver_transformation import transform_sales
 from gold_core.gold_core_builder import build_customer_metrics
-from ml.gold_ml_generator import generate_models
+from gold_ml.gold_ml_generator import generate_models
 
 RAW_SALES_PATH = os.getenv("RAW_SALES_PATH", "/mnt/raw/sales.csv")
 MODEL_CONFIG_PATH = os.getenv("PIPELINE_CONFIG_PATH", "config/ml_models.json")

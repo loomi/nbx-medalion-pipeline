@@ -123,14 +123,14 @@ python orchestration/job_entrypoint.py
 O workflow GitHub Actions está em `.github/workflows/ci-cd.yml` e executa:
 
 1. `build-test` (sempre que houver `push`/`pull_request` para `main`):
-   - Instala dependências
-   - Executa `pytest`
+  - Instala dependências
+  - Executa `pytest`
 2. `deploy-dev` (após sucesso em `build-test`):
-   - Deploy para `/Shared/pipeline-medalion-dev`
+  - Deploy para `/Shared/pipeline-medalion-dev`
 3. `deploy-staging` (após sucesso em `deploy-dev`):
-   - Deploy para `/Shared/pipeline-medalion-staging`
+  - Deploy para `/Shared/pipeline-medalion-staging`
 4. `deploy-prod` (após sucesso em `deploy-staging`):
-   - Deploy para `/Shared/pipeline-medalion-prod`
+  - Deploy para `/Shared/pipeline-medalion-prod`
 
 Cada job de deploy usa Databricks CLI autenticado por variáveis de ambiente.
 
@@ -203,7 +203,6 @@ Para cada modelo, o pipeline gera:
 
 Detalhes de contratos e responsabilidades estão descritos em `DATA_CONTRACTS_AND_RULES.md`.
 
-
 Enterprise Medallion Architecture with:
 
 - Bronze / Silver / Gold Core reusable layers
@@ -217,12 +216,12 @@ Enterprise Medallion Architecture with:
 
 1. Push para a branch `main`
 2. GitHub Actions executa:
-   - Instalação de dependências
-   - Execução de testes com `pytest`
+  - Instalação de dependências
+  - Execução de testes com `pytest`
 3. Após testes, ocorrem os deploys em cadeia:
-   - `dev` → workspace path `/Shared/pipeline-medalion-dev`
-   - `staging` → workspace path `/Shared/pipeline-medalion-staging`
-   - `prod` → workspace path `/Shared/pipeline-medalion-prod`
+  - `dev` → workspace path `/Shared/pipeline-medalion-dev`
+  - `staging` → workspace path `/Shared/pipeline-medalion-staging`
+  - `prod` → workspace path `/Shared/pipeline-medalion-prod`
 
 Os jobs de deploy utilizam o Databricks CLI autenticado via variáveis de ambiente.
 
@@ -244,16 +243,13 @@ Sugestão: configurar GitHub Environments (`dev`, `staging`, `prod`) e associar 
 
 1. Criar (opcional) e ativar um virtualenv
 2. Instalar dependências:
-
-   ```bash
+  ```bash
    pip install -r requirements.txt
-   ```
-
+  ```
 3. Executar:
-
-   ```bash
+  ```bash
    pytest
-   ```
+  ```
 
 Os testes atuais validam a estrutura de `config/ml_models.json` e garantem que cada modelo está devidamente configurado.
 
@@ -287,3 +283,6 @@ python orchestration/job_entrypoint.py
 > Observação: para executar integralmente as operações Delta Lake fora do Databricks,
 > é necessário ter um ambiente Spark com suporte a Delta configurado (por exemplo,
 > adicionando `delta-spark` e configurando o `SparkSession` apropriadamente).
+>
+>
+
