@@ -1,0 +1,19 @@
+
+{
+  "models": [
+    {
+      "model_name": "churn_model",
+      "version": 1,
+      "source_table": "gold_core.customer_metrics",
+      "feature_columns": ["frequency", "total_spent", "avg_ticket"],
+      "target_column": "frequency"
+    },
+    {
+      "model_name": "clv_model",
+      "version": 2,
+      "source_table": "gold_core.customer_metrics",
+      "feature_columns": ["frequency", "avg_ticket"],
+      "target_column": "total_spent"
+    }
+  ]
+}
