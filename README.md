@@ -287,30 +287,3 @@ python orchestration/job_entrypoint.py
 > Observação: para executar integralmente as operações Delta Lake fora do Databricks,
 > é necessário ter um ambiente Spark com suporte a Delta configurado (por exemplo,
 > adicionando `delta-spark` e configurando o `SparkSession` apropriadamente).
-
-## Como gerar o pacote ZIP do projeto
-
-Há um script utilitário em `scripts/package_project.py` que gera um ZIP com o código
-e arquivos relevantes, ignorando diretórios de build, cache e metadados de ferramentas.
-
-Execução:
-
-```bash
-python scripts/package_project.py
-```
-
-Saída esperada:
-
-- Arquivo `dist/nbx-medalion-pipeline.zip` contendo a estrutura do projeto pronta
-  para distribuição ou import em outro repositório/workspace.
-
-## Schemas required in Databricks
-
-CREATE SCHEMA bronze;
-CREATE SCHEMA silver;
-CREATE SCHEMA gold_core;
-CREATE SCHEMA gold_ml;
-CREATE SCHEMA ml_registry;
-
-After deployment, create a Databricks Job using:
-orchestration/job_entrypoint.py
